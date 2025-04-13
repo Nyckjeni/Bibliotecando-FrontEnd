@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+.header {
+    background-color: #b49dff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.logo-text {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: #b49dff;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.form-title {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    margin: 0 10px;
+    min-width: 200px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.required::after {
+    content: "*";
+    color: #4e1c78;
+}
+
+.form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 14px;
+}
+
+.form-textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.form-select {
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.select-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #4e1c78;
+    pointer-events: none;
+}
+
+.file-input-container {
+    position: relative;
+}
+
+.file-input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    padding-right: 40px;
+}
+
+.upload-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4e1c78;
+    cursor: pointer;
+}
+
+.btn-save {
+    background-color: #4e1c78;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-save:hover {
+    background-color: #3b1559;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 16px;
+    color: #b49dff;
+}
+
+.search-input::placeholder {
+    color: #b49dff;
+}
+
+.search-btn {
+    background-color: #4e1c78;
+    border: none;
+    border-radius: 15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Book Results Styling */
+.book-results {
+    margin-top: 20px;
+}
+
+.book-item {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.book-cover {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.book-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.book-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.book-genre, .book-author {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.book-synopsis {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.action-buttons {
+    margin-top: 20px;
+}
+
+.btn-delete, .btn-edit {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.btn-delete {
+    background-color: #4e1c78;
+    color: white;
+}
+
+.btn-edit {
+    background-color: #4e1c78;
+    color: white;
+}
+
+.btn-delete svg, .btn-edit svg {
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-group {
+        margin: 10px 0;
+    }
+    
+    .form-container {
+        padding: 20px 15px;
+    }
+    
+    .book-item {
+        flex-direction: column;
+    }
+    
+    .book-cover {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-title {
+        font-size: 20px;
+    }
+    
+    .btn-save {
+        padding: 12px 30px;
+    }
+    
+    .book-title {
+        font-size: 18px;
+    }
+    
+    .book-genre, .book-author {
+        font-size: 14px;
+    }
+}
