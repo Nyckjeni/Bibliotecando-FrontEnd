@@ -9,31 +9,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-
-
 </head>
 
 <body>
     <header class="header">
         <div class="logo-container">
-            <!-- Replace SVG with image -->
             <img src="img/logo.png" alt="Bibliotecando Logo" class="logo">
             <span class="logo-text">Bibliotecando</span>
         </div>
     </header>
-    <div class="main-container">
+    
+    <div class="search-container">
+        <input type="text" class="search-input" id="searchInput" placeholder="Buscar Livro ou Autor">
+        <button class="search-btn" id="searchBtn">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </button>
+    </div>
+    
+    <div id="bookResults" class="book-results">
+        <!-- Book results will be displayed here -->
+    </div>
+
+    <div class="main-container" id="bookFormContainer">
         <div class="form-container">
             <h2 class="form-title">Cadastrar Livro</h2>
             
             <form id="bookForm">
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label required">Nome</label>
+                        <label for="name" class="form-label required">Nome</label>
                         <input type="text" class="form-input" id="name" required>
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label required">Gênero</label>
+                        <label for="genre" class="form-label required">Gênero</label>
                         <div class="select-wrapper">
                             <select class="form-select" id="genre" required>
                                 <option value="" disabled selected></option>
@@ -48,53 +60,71 @@
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">Autor</label>
+                        <label for="author" class="form-label">Autor</label>
                         <input type="text" class="form-input" id="author">
                     </div>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label required">Imagem do Livro</label>
+                        <label for="imageURL" class="form-label required">Imagem do Livro</label>
                         <div class="file-input-container">
                             <input type="text" class="file-input" id="imageURL" required readonly placeholder="Selecione uma imagem">
                             <div class="upload-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4e1c78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                    <polyline points="17 8 12 3 7 8"></polyline>
-                                    <line x1="12" y1="3" x2="12" y2="15"></line>
-                                </svg>
+                                <img src="img/uploud.png" alt="Upload" class="icon-img">
                             </div>
-                            <input type="file" id="imageFile" style="display: none;" accept="image/*">
+                            <input type="file" id="imageFile" style="display: none;">
                         </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label required">Sinopse</label>
-                        <textarea class="form-textarea" id="synopsis" required></textarea>
-                    </div>
-                    
-                    <div class="form-group" style="display: flex; align-items: flex-end; justify-content: center;">
-                        <button type="submit" class="btn-save">Salvar Livro</button>
-                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="synopsis" class="form-label required">Sinopse</label>
+                    <textarea class="form-textarea" id="synopsis" required></textarea>
+                </div>
+                
+                <div class="form-group" style="display: flex; align-items: flex-end; justify-content: center;">
+                    <button type="submit" class="btn-save">Salvar Livro</button>
                 </div>
             </form>
         </div>
-        
-        <div class="search-container">
-            <input type="text" class="search-input" id="searchInput" placeholder="Orgulho e Preconceito">
-            <button class="search-btn" id="searchBtn">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </button>
-        </div>
-        
-        <div id="bookResults" class="book-results">
-            <!-- Book results will be displayed here -->
+    </div>
+
+    <!-- Formulário de autor -->
+    <div class="main-container" id="authorFormContainer">
+        <div class="form-container">
+            <h2 class="form-title">Cadastrar Autor</h2>
+            
+            <form id="AutorForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nameAutor" class="form-label required">Nome do Autor</label>
+                        <input type="text" class="form-input" id="nameAutor" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="namelivros" class="form-label required">Livros</label>
+                        <input type="text" class="form-input" id="namelivros" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bioAutor" class="form-label required">Biografia</label>
+                    <textarea class="form-textarea" id="bioAutor" required></textarea>
+                </div>
+                
+                <div class="form-group" style="display: flex; align-items: flex-end; justify-content: center;">
+                    <button type="submit" class="btn-save">Salvar Autor</button>
+                </div>
+            </form>
         </div>
     </div>
+    <div id="authorResults" class="author-results">
+        <!-- Os autores serão exibidos aqui -->
+    </div>
+    
 
     <script src="script.js"></script>
 </body>
